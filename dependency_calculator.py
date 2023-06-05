@@ -34,7 +34,6 @@ class Relation:
 
         return closure
 
-    # TODO : fix
     def candidate_keys(self):
         all_possible_keys = Relation.all_subsets(self.attributes)
         keys = []
@@ -47,7 +46,6 @@ class Relation:
         keys.sort(key=len)
         return keys
 
-    # TODO : fix
     def is_redundant(self, key: set):
         for attribute in key:
             # remove it and check if still a key
