@@ -127,4 +127,8 @@ f1 = FunctionalDependencySet("Q1", "F")
 g1 = FunctionalDependencySet("Q1", "G")
 
 f2 = FunctionalDependencySet("Q2", "F")
+f3 = FunctionalDependencySet("Q3", "F")
 print(f2.compute_minimal_cover())
+print(f1.compute_minimal_cover())
+print(g1.compute_minimal_cover())
+print(f3.compute_minimal_cover())
