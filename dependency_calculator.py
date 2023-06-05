@@ -3,7 +3,7 @@ import json
 
 class Relation:
 
-    fd_file = "fds.json"
+    fd_file = "relations.json"
 
     def __init__(self, relation_name: str):
         a = json.load(open("fds.json"))
@@ -80,12 +80,6 @@ class Relation:
 
         s = f"Attributes : {self.attributes}\n\nFDS\n{fds}"
         return s
-
-
-class FunctionalDependencySet:
-
-    def __init__(self):
-        pass
 
 
 r = Relation("R1")
