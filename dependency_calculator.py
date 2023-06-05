@@ -42,8 +42,9 @@ class Relation:
             # pass by val so passing a deep copy ded lmao big bug found
             copy = set(temp_key)
             closure = self.attribute_closure(copy)
-            if closure == self.attributes and not self.is_redundant(copy):
+            if closure == self.attributes and not self.is_redundant(temp_key):
                 keys.append(temp_key)
+        keys.sort(key=len)
         return keys
 
     # TODO : fix
@@ -81,13 +82,6 @@ class Relation:
 
 
 r = Relation("R1")
-# print(Relation.all_subsets(r.attributes))
-print(r.is_redundant(set('ABD')))
-print(r.is_redundant(set('ABDH')))
-print(r.is_redundant(set('ABDHIJ')))
+
 keys = r.candidate_keys()
-keys.sort(key=len)
-c = 0
-for i in keys:
-    print(c, i, len(i))
-    c += 1
+print(keys)
