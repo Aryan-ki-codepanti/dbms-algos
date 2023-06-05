@@ -82,6 +82,12 @@ class Relation:
         return s
 
 
+class FunctionalDependencySet:
+
+    def __init__(self):
+        pass
+
+
 r = Relation("R1")
 
 r2 = Relation("R2")
