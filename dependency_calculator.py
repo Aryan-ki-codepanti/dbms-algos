@@ -81,5 +81,14 @@ class Relation:
 
 r = Relation("R1")
 
-keys = r.candidate_keys()
-print(keys)
+r2 = Relation("R2")
+print(r2.candidate_keys())
+
+r3 = Relation("BOOK")
+print(r3.candidate_keys())
+
+r4 = Relation("R4")
+print(r4.candidate_keys())
+
+r5 = Relation("R5")
+print(r5.candidate_keys())
