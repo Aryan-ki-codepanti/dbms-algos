@@ -11,7 +11,10 @@ class Relation:
         self.attributes = set(a[relation_name]['Attributes'])
         self.fds = a[relation_name]['FDs']
 
-    def attribute_closure(self, x: set):
+    def attribute_closure(self, x: set, fds=None):
+
+        if fds is None:
+            fds = self.fds
 
         if isinstance(x, str) or isinstance(x, list):
             x = set(x)
@@ -24,7 +27,7 @@ class Relation:
 
         while True:
 
-            for lhs, rhs in self.fds:
+            for lhs, rhs in fds:
                 if set(lhs).issubset(closure):
                     closure.update(rhs)
 
@@ -92,3 +95,6 @@ print(r4.candidate_keys())
 
 r5 = Relation("R5")
 print(r5.candidate_keys())
+
+r6 = Relation("UNIVERSITY")
+print(r6.candidate_keys())
