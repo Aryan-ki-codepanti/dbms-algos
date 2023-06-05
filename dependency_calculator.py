@@ -6,7 +6,7 @@ class Relation:
     fd_file = "relations.json"
 
     def __init__(self, relation_name: str):
-        a = json.load(open("fds.json"))
+        a = json.load(open(Relation.fd_file))
         self.relation_name = relation_name
         self.attributes = set(a[relation_name]['Attributes'])
         self.fds = a[relation_name]['FDs']
